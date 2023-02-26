@@ -1,0 +1,21 @@
+<% content_for :title, "Listing featured items" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @featured_items.each do |featured_item| %>
+  <tr>
+    <td><%=h featured_item.title %></td>
+    <td><%= link_to 'Edit', edit_featured_item_path(featured_item) %></td>
+    <td><%= link_to 'Remove', featured_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New featured_item', new_featured_item_path %>

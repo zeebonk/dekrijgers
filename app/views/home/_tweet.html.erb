@@ -1,0 +1,10 @@
+<div class="twitter-post">
+  <% if last == true %>
+  <p class="last">
+  <% else %>
+  <p>
+  <% end %>
+    <img src="<%= tweet.image %>">
+    <strong><%= tweet.username %></strong> <%= auto_link(tweet.text.to_s) %>
+  </p>
+</div>

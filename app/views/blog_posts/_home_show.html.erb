@@ -1,0 +1,18 @@
+<span class="header">
+  
+  <%= blog_post.administrator.name %> 
+  @ 
+  <%= DateTimeConverter.utc_to_nl(blog_post.created_at).strftime("%d/%m/%y, %H:%M") %>
+  
+</span>
+<div class="item">
+
+  <%= link_to(image_tag("/images/small/" + blog_post.image), "/images/large/" + blog_post.image) if blog_post.image != nil && blog_post.image != "" %>
+  
+  <h2>
+    <%= blog_post.title %>
+  </h2>
+  
+  <%= blog_post.content %>
+  
+</div>

@@ -1,0 +1,31 @@
+<% content_for :title, "New blog post" %>
+
+<% form_for(@blog_post, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <dl>
+    <dt>
+      <%= f.label :title %>
+    </dt>
+    <dd>
+      <%= f.text_field :title %>
+    </dd>
+    <dt>
+      <%= f.label :content %>
+    </dt>
+    <dd>
+      <%= f.text_area :content %>
+    </dd>
+    <dt>
+      <%= f.label :image %>
+    </dt>
+    <dd>
+      <%= f.file_field :image %>
+    </dd>    
+  </dl>
+  
+  <%= f.submit 'Create' %>
+  
+<% end %>
+
+<%= link_to 'Back', blog_posts_path %>

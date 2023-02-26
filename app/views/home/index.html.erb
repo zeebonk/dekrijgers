@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="nl"> 
+  <head> 
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    
+		<%= stylesheet_link_tag("main") %>
+    <%= stylesheet_link_tag("colorbox") %>
+    <%= javascript_include_tag("jquery-1.5.min") %>
+    <%= javascript_include_tag("jquery.cycle.lite") %>
+    <%= javascript_include_tag("jquery.colorbox-min") %>
+		
+    <script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#blog .item a:first').colorbox();
+				$('#featured-content').cycle({
+					timeout: 8000,
+					fx: 'fade'
+				});W
+				
+				var cssLink = document.createElement("link");
+				cssLink.href = "http://localhost:3000/stylesheets/hack.css"; 
+				cssLink.rel = "stylesheet";
+				cssLink.type = "text/css";
+				var doc=document.getElementById("fbframe").contentWindow.document;
+				doc.body.appendChild(cssLink);
+			});
+		</script>
+    
+		<title>Home - De Krijgers</title> 
+    
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-22430531-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		
+  </head>
+  <body>
+  
+    <div id="header">
+      <div id="header-content">
+      
+        <div id="logo">
+          <a href="#" title="Naar de homepage">
+            <img src="images/logo.jpg" alt="De Krijgers logo">
+          </a>
+        </div>
+        
+        <div id="featured-content">
+          <% first = true %>
+          <% @featured_items.each do |featured_item| %>
+            <%= render :partial => "featured_items/home_show", :locals => { :featured_item => featured_item, :first => first } %>
+            <% first = false %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    
+    <div id="content-wrapper">
+    
+      <div id="blog">
+        <% @blog_posts.each do |blog_post| %>
+          <%= render :partial => "blog_posts/home_show", :locals => { :blog_post => blog_post } %>
+        <% end %>
+      </div>
+      
+      <div id="sidebar">
+      
+        <div class="item">
+          <div class="header">
+            <h3>Gigs</h3>
+          </div>
+          <div class="content">
+            <table id="gigs-list">
+              <% @gigs.each do |gig| %>
+                <%= render :partial => "gigs/home_show", :locals => { :gig => gig, :even => cycle("no", "yes") } %>
+              <% end %>
+            </table>
+          </div>
+        </div>
+
+				<div class="item">
+          <div class="header">
+            <h3>Muziek</h3>
+          </div>
+          <div class="content">
+						<div id="music-player-wrapper">
+							<object data="http://bandcamp.com/EmbeddedPlayer/album=3714777277/size=tall/bgcol=FFFFFF/linkcol=4285BB//" type="text/html" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="150" height="295"><param name="movie" value="http://bandcamp.com/EmbeddedPlayer/album=3714777277/size=tall/bgcol=FFFFFF/linkcol=4285BB//"><param name="quality" value="high"><param name="allowNetworking" value="always"><param name="wmode" value="transparent"><param name="bgcolor" value="#FFFFFF"><param name="allowScriptAccess" value="never"><object data="http://bandcamp.com/EmbeddedPlayer/album=3714777277/size=tall/bgcol=FFFFFF/linkcol=4285BB//" type="text/html" width="150" height="295"></object></object>
+						</div>
+          </div>
+        </div>
+				
+        <div class="item">
+          <div class="header">
+            <h3>Twitter</h3>
+            <a href="http://twitter.com/share?text=Deze%20Krijgers%20zijn%20te%20gek!&url=http://www.dekrijgers.nl" title="Tweet over De Krijgers op Twitter"><img src="images/twitter.gif"></a>
+          </div>
+          <div class="content">
+            <% @tweets.each do |tweet| %>
+              <%= render :partial => "home/tweet", :locals => { :tweet => tweet, :last => (tweet == @tweets.last) } %>
+            <% end %>
+          </div>
+        </div> 
+        
+        <div class="item">
+          <div class="header">
+            <h3>Facebook</h3>
+          </div>
+          <div class="content">
+            <iframe id="fbframe" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FDe-Krijgers%2F162805997076775&amp;width=279&amp;colorscheme=light&amp;show_faces=true&amp;stream=true&amp;header=false&amp;height=552" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:279px; height:552px;" allowTransparency="true"></iframe>
+          </div>
+        </div>
+        
+      </div>
+    
+    </div>
+    <div id="footer">
+    </div>
+    
+  </body>
+</html>

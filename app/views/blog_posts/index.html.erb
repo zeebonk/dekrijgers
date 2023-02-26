@@ -1,0 +1,25 @@
+<% content_for :title, "Listing blog posts" %>
+
+<table>
+  <tr>
+    <th>Created at</th>
+    <th>Title</th>
+    <th>Administrator</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blog_posts.each do |blog_post| %>
+  <tr>
+    <td><%=h DateTimeConverter.utc_to_nl(blog_post.created_at).strftime("%H:%M %d-%m-%y") %></td>
+    <td><%=h blog_post.title %></td>
+    <td><%=h blog_post.administrator.name %></td>
+    <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
+    <td><%= link_to 'Remove', blog_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create new blog post', new_blog_post_path %>

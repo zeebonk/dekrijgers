@@ -1,0 +1,210 @@
+body {
+	margin:0;
+	padding:0;
+	color: white;
+	background: rgb(210, 210, 210);
+	font-family: arial;
+}
+
+#background-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position: fixed;
+	z-index: 0;
+}
+
+#background-wrapper img { 
+	width: 100%; 
+	position: fixed; 
+	z-index: 1;
+}
+
+#header {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.85);
+	height: 50px;
+	width: 100%;
+	z-index: 10;
+}
+
+#logo {
+	margin-top: -7px; 
+	width:130px; 
+}
+
+#menu {
+	float:left;
+	display: block;
+	margin:0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+#menu li {
+	display: block;
+	height : 50px;
+	float: left;
+}
+
+#menu li a {
+	text-decoration: none;
+	color: white;
+	display: block;
+	height: 32px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 18px;
+}
+
+#menu li a:hover {
+	background: #000000;
+	-webkit-transition: background 0.5s linear;
+	-moz-transition: background 0.5s linear;
+	-o-transition: background 0.5s linear;
+	transition: background 0.5s linear;
+}
+
+#bandcamp-player {
+	position: absolute;
+	display: block;
+	width: 300px;
+	height: 82px;
+	right: 0;
+	margin-top: -32px;
+}
+
+
+#container
+{
+	position: relative;
+	z-index: 5;
+	padding-left: 200px;   /* LC width */
+	padding-right: 200px;  /* RC width */
+	padding-top: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#container .column
+{
+	position: relative;
+	float: left;
+	height: 300px;
+}
+
+#center
+{
+	width: 100%;
+}
+
+#left
+{
+	width: 200px;          /* LC width */
+	right: 200px;          /* LC width */
+	margin-left: -100%;
+}
+
+#right
+{
+	width: 200px;          /* RC width */
+	margin-right: -200px;  /* RC width */
+}
+
+#center-padding
+{
+	padding: 0px 50px 80px 50px;
+}
+
+#content
+{
+	padding: 50px;
+	background: rgba(0,0,0,0.7);
+	font-size: 16px;
+	line-height: 20px;
+}
+
+/*** IE6 Fix ***/
+* html #left 
+{
+	left: 150px;           /* RC width */
+}
+
+.side-column-block
+{
+	background: rgba(0,0,0,0.7);
+	margin-bottom: 50px;
+	padding: 15px;
+}
+
+h3
+{
+	margin: 0;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	display: block;
+	background: rgba(0,0,0,0.85);
+}
+
+.social-media
+{
+	text-align: center;
+}
+
+#contact
+{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+.contact-item
+{
+	display: block;
+	padding-left: 35px;
+	margin-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.contact-item:last-child
+{
+	margin-bottom: 0px;
+}
+
+.phone { background-image: url(../images/phone.png); }
+.email { background-image: url(../images/email.png); }
+
+
+#gigs
+{
+	margin:0;
+	margin-left: 20px;
+	padding:0;
+}
+
+#gigs li
+{
+	line-height: 14px;
+	margin-bottom: 15px;
+}
+
+#gigs li:last-child
+{
+	margin-bottom: 0px;
+}
+
+#gigs span
+{
+	font-size: 11px;
+}
+
+h1
+{
+	font-weight: 100;
+	font-size: 50px;
+	line-height: 60px;
+	margin-top: 0;
+}

@@ -1,0 +1,23 @@
+<% content_for :title, "Listing administrators" %>
+
+<table>
+  <tr>
+    <th class="content">Name</th>
+    <th class="action"></th>
+    <th class="action"></th>
+    <th class="action"></th>
+  </tr>
+
+<% @administrators.each do |administrator| %>
+  <tr>
+    <td><%=h administrator.name %></td>
+    <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
+    <td><%= link_to 'Change password', :action => "change_password", :id => administrator %></td>
+    <td><%= link_to 'Remove', administrator, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New administrator', new_administrator_path %>

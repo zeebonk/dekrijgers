@@ -1,0 +1,15 @@
+<% if even == "yes" %>
+<tr class="even">  
+<% else %>
+<tr>
+<% end %>
+  <td>
+    <%=h gig.start.strftime("%d/%m/%y") %>
+  </td>
+  <td>
+    <%=h gig.start.strftime("%H:%M") %>
+  </td>
+  <td class="location">
+    <%=h gig.name %>
+  </td>
+</tr>

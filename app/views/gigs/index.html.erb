@@ -1,0 +1,23 @@
+<% content_for :title, "Listing gigs" %>
+
+<table>
+  <tr>
+    <th>Start</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gigs.each do |gig| %>
+  <tr>
+    <td><%=h gig.start.strftime("%d/%m/%y, %H:%M") %></td>
+    <td><%=h gig.name %></td>
+    <td><%= link_to 'Edit', edit_gig_path(gig) %></td>
+    <td><%= link_to 'Remove', gig, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New gig', new_gig_path %>

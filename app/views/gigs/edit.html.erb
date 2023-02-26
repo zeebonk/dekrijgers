@@ -1,0 +1,25 @@
+<% content_for :title, "Editing gig" %>
+
+<% form_for(@gig) do |f| %>
+  <%= f.error_messages %>
+
+  <dl>
+    <dt>
+      <%= f.label :start %>
+    </dt>
+    <dd>
+      <%= f.datetime_select :start %>
+    </dd>
+    <dt>
+      <%= f.label :name %>
+    </dt>
+    <dd>
+      <%= f.text_field :name %>
+    </dd>
+  </dl>
+
+  <%= f.submit 'Create' %>
+  
+<% end %>
+
+<%= link_to 'Back', gigs_path %>

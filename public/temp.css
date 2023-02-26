@@ -1,0 +1,49 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+
+#header
+{
+	text-align: center;
+}
+
+#content-wrapper
+{
+	width: 100%;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.column
+{
+	width: 23%;
+	margin: 0 1%;
+	height: 400px;
+	background: white;
+	float: left;
+}
+
+h2
+{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-size: 20px;
+
+}
+
+#bandcamp-wrapper
+{
+	width: 100%;
+	text-align: center;	
+}
+
+#buttons-wrapper
+{
+	text-align:center;
+	margin: 0 auto;
+}

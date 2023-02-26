@@ -1,0 +1,14 @@
+<% if first %>
+<div id="featured-item" class="first">
+<% else %>
+<div id="featured-item">
+<% end %>
+
+  <img src="/images/medium/<%= featured_item.image %>">
+  <p>
+    <strong>
+      <%= featured_item.title %>
+    </strong>
+    <%= featured_item.content %>
+  </p>
+</div>
